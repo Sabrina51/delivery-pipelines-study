@@ -15,7 +15,7 @@ spec:
         params:
           - name: param_name
         steps:
-          - name: runTest
+          - name: runtest
             image: ubuntu
             command:
               - /bin/bash
