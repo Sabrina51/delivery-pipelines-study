@@ -1,22 +1,22 @@
 apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
-  name: start-cypress-test
+  name: 
 spec:
+  # params:
+  resources:
+    inputs:
+      resources:
+        - name: workspace
+          type: git
+          targetPath: target-workspace
+    outputs:
+      resources:
+        - name: build-sources
+          type: ubuntu
   steps:
-    - name: cypress
-      image: cypress/browsers:22.12.0
+    - name: build-sources
+      image: ubuntu
       command:
-        - "cypress"
-      args:
-        - "run"
-
----
-
-apiVersion: tekton.dev/v1beta1
-kind: TaskRun
-metadata:
-  name: run-cypress-tests
-spec:
-  taskRef:
-    name: start-cypress-test
+        - /bin/bash
+      args: ['-c', 'echo hello world']

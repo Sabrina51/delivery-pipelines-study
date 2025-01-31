@@ -1,0 +1,22 @@
+apiVersion: triggers.tekton.dev/v1beta1
+kind: TriggerTemplate
+metadata:
+  name: templateName
+spec:
+  params:
+    - name: param_name
+  resourcetemplates:
+    - apiVersion: tekton.dev/v1beta1
+      kind: Task
+      metadata:
+        name: cypress-test
+      spec:
+      # params:
+        params:
+          - name: param_name
+        steps:
+          - name: runTest
+            image: ubuntu
+            command:
+              - /bin/bash
+            args: ['-c', 'echo hello world']
