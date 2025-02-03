@@ -9,3 +9,6 @@ spec:
     - name: uma-taks
       taskRef:
         name: minha-primeira-task
+      params:
+      - name: bananinha
+        value: $(params.bananinha)
