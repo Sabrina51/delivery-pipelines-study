@@ -4,7 +4,7 @@ metadata:
   name: trigador-modelo
 spec:
   params:
-  - name: bana-ninha
+  - name: bananinha
     default: "amarela"
   resourcetemplates:
   - apiVersion: tekton.dev/v1beta1
@@ -15,8 +15,8 @@ spec:
       pipelineRef:
         name: simple-pipeline
       params:
-      - name: bana-ninha
-        value: $(params.bana-ninha)
+      - name: bananinha
+        value: $(params.bananinha)
       workspaces:
       - name: git-source
         emptyDir: {}

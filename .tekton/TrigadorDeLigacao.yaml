@@ -4,5 +4,5 @@ metadata:
   name: trigador-de-ligacao
 spec:
   params:
-    - name: bana-ninha
+    - name: bananinha
       value: $(body.repository.url)
