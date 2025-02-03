@@ -5,4 +5,4 @@ metadata:
 spec:
   params:
     - name: bananinha
-      value: $(body.repository.url)
+      value: $(body.repository)
