@@ -3,10 +3,9 @@ kind: EventListener
 metadata:
   name: meu-evento-ouvinte
 spec:
-  serviceAccountName: serviceAccount
   triggers:
     - name: meu-gatilho
       bindings:
-        - name: trigadorDeLigacao
+        - name: trigador-de-ligacao
       template:
-        name: trigadorModelo
+        name: trigador-modelo
