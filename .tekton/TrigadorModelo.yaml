@@ -15,7 +15,7 @@ spec:
         name: simple-pipeline
       params:
       - name: param
-        value: $(tt.params.param_name)
+        value: $(params.param_name)
       workspaces:
       - name: git-source
         emptyDir: {}
