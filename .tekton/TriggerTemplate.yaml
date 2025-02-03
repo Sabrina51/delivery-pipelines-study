@@ -4,19 +4,18 @@ metadata:
   name: templateName
 spec:
   params:
-    - name: param_name
+    - name: url
   resourcetemplates:
     - apiVersion: tekton.dev/v1beta1
-      kind: Task
+      kind: PipelineRun
       metadata:
-        name: cypress-test
+        generateName: simple-pipeline-run-
       spec:
-      # params:
+        pipelineRef:
+          name: clone-read-run-
         params:
-          - name: param_name
-        steps:
-          - name: runtest
-            image: ubuntu
-            command:
-              - /bin/bash
-            args: ['-c', 'echo hello world']
+          - name: url
+            value: $(params.repo-url)
+        workspaces:
+          - name: git-source
+            emptyDir: {}

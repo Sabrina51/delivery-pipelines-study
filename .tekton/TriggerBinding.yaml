@@ -4,5 +4,5 @@ metadata:
   name: bindingName
 spec:
   params:
-    - name: param_name
-      value: paramvalue
+    - name: url
+      value: $(params.repo-url)
