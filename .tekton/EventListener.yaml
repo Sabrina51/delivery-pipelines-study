@@ -7,6 +7,6 @@ spec:
   triggers:
     - name: meu-gatilho
       bindings:
-        - name: vinculo
+        - name: licacoes
       template:
         name: modelo
