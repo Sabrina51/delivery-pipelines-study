@@ -7,6 +7,6 @@ spec:
   triggers:
     - name: meu-gatilho
       bindings:
-        - name: licacoes
+        - name: trigadorDeLigacao
       template:
-        name: modelo
+        name: trigadorModelo

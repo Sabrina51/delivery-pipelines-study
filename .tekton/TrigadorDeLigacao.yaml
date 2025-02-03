@@ -1,0 +1,8 @@
+apiVersion: triggers.tekton.dev/v1beta1
+kind: TriggerBinding
+metadata:
+  name: trigadorDeLigacao
+spec:
+  params:
+    - name: param_name
+      value: value
