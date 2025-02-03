@@ -5,4 +5,4 @@ metadata:
 spec:
   params:
     - name: param_name
-      value: value
+      value: "value"
