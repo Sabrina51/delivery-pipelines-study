@@ -1,0 +1,11 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: simple-pipeline
+spec:
+  params:
+    - name: param_name
+  tasks:
+    - name: umaTaks
+      taskRef:
+        name: minhaPrimeiraTask
