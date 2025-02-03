@@ -20,5 +20,6 @@ spec:
         # - /bin/bash
         # args: ["-c", "echo hello world" ]
       args:
-        - | 
+        - |
+          ls
           source classic-pipeline.sh
