@@ -14,7 +14,7 @@ spec:
       pipelineRef:
         name: simple-pipeline
       params:
-      - name: naosei
+      - name: bana-ninha
         value: $(params.bana-ninha)
       workspaces:
       - name: git-source
