@@ -5,4 +5,4 @@ metadata:
 spec:
   params:
     - name: bananinha
-      value: $(body.repository)
+      value: $(body.repository.ssh_url)
