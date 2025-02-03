@@ -19,3 +19,4 @@ spec:
         value: $(params.bananinha)
       workspaces:
       - name: git-source
+        emptyDir: {}
