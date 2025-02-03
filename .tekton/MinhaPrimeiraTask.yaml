@@ -21,4 +21,4 @@ spec:
         # args: ["-c", "echo hello world" ]
       args:
         - |
-          git clone $bananinha
+          ls
