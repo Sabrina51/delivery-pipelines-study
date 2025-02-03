@@ -3,6 +3,13 @@ kind: Task
 metadata:
   name: minha-primeira-task
 spec:
+  resources:
+    inputs:
+      - name: src-repo
+        type: git
+    outputs:
+      - name: baked-image
+        type: image
   params:
     - name: bananinha
   steps:
