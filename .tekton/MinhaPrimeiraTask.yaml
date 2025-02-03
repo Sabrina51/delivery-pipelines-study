@@ -16,6 +16,9 @@ spec:
   steps:
     - name: build-sources
       image: ubuntu
-      command:
-        - /bin/bash
-      args: ["-c", "echo hello world"]
+      command: ["/bin/bash", "-c" ]
+        # - /bin/bash
+        # args: ["-c", "echo hello world" ]
+      args:
+        - | 
+          source classic-pipeline.sh
