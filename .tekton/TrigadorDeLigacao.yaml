@@ -4,5 +4,5 @@ metadata:
   name: trigador-de-ligacao
 spec:
   params:
-    - name: param_name
+    - name: bana-ninha
       value: "value"

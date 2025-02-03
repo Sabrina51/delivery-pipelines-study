@@ -4,7 +4,7 @@ metadata:
   name: minha-primeira-task
 spec:
   params:
-    - name: param_name
+    - name: bana-ninha
   steps:
     - name: build-sources
       image: ubuntu
