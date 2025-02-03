@@ -1,17 +1,18 @@
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1alpha1
 kind: Task
 metadata:
   name: minha-primeira-task
 spec:
-  resources:
-    inputs:
-      - name: src-repo
+  inputs:
+    resources:
+      - name: workspace
         type: git
-    outputs:
-      - name: baked-image
+    params:
+      - name: bananinha
+  outputs:
+    resources:
+      - name: builtImage
         type: image
-  params:
-    - name: bananinha
   steps:
     - name: build-sources
       image: ubuntu
