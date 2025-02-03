@@ -6,6 +6,6 @@ spec:
   params:
     - name: param_name
   tasks:
-    - name: umaTaks
+    - name: uma-taks
       taskRef:
-        name: minhaPrimeiraTask
+        name: minha-primeira-task
