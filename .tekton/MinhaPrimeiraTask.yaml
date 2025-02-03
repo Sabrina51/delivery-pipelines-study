@@ -10,4 +10,4 @@ spec:
       image: ubuntu
       command:
         - /bin/bash
-      args: ["-c", "ls"]
+      args: ["-c", "cd workspace/"]
