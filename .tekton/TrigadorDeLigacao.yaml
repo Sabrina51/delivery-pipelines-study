@@ -5,4 +5,4 @@ metadata:
 spec:
   params:
     - name: bana-ninha
-      value: $(event.ref)
+      value: $(body.repository.url)
