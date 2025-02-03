@@ -4,7 +4,7 @@ metadata:
   name: trigador-modelo
 spec:
   params:
-  - name: param_name
+  - name: bana-ninha
   resourcetemplates:
   - apiVersion: tekton.dev/v1beta1
     kind: PipelineRun
@@ -15,7 +15,7 @@ spec:
         name: simple-pipeline
       params:
       - name: naosei
-        value: $(params.param_name)
+        value: $(params.bana-ninha)
       workspaces:
       - name: git-source
         emptyDir: {}
