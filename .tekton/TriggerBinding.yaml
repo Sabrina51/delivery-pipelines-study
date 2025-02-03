@@ -1,8 +1,0 @@
-apiVersion: triggers.tekton.dev/v1beta1
-kind: TriggerBinding
-metadata:
-  name: bindingName
-spec:
-  params:
-    - name: url
-      value: $(params.repo-url)

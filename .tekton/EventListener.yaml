@@ -1,12 +1,12 @@
 apiVersion: triggers.tekton.dev/v1beta1
 kind: EventListener
 metadata:
-  name: eventListenerName
+  name: meu-evento-ouvinte
 spec:
   serviceAccountName: serviceAccount
   triggers:
-    - name: triggerName
+    - name: meu-gatilho
       bindings:
-        - name: bindingName
+        - name: vinculo
       template:
-        name: templateName
+        name: modelo
