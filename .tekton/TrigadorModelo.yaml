@@ -19,4 +19,4 @@ spec:
         value: $(params.bananinha)
       workspaces:
       - name: git-source
-        mountPath : /workspace/caju
+        emptyDir: {}
