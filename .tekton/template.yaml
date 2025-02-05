@@ -10,7 +10,7 @@ spec:
   - apiVersion: tekton.dev/v1beta1
     kind: PipelineRun
     metadata:
-      generateName: regressions-pipeline-run-
+      generateName: pipeline-run-
     spec:
       pipelineRef:
         name: simple-pipeline

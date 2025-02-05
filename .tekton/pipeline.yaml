@@ -6,7 +6,7 @@ spec:
   params:
     - name: bananinha
   tasks:
-    - name: e2e-tests
+    - name: regression-tests
       taskRef:
         name: cypress-task
       params:
