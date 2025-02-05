@@ -3,6 +3,8 @@ kind: Pipeline
 metadata:
   name: simple-pipeline
 spec:
+  workspaces:
+  - name: git-source
   params:
     - name: bananinha
   tasks:
@@ -12,3 +14,5 @@ spec:
       params:
       - name: bananinha
         value: $(params.bananinha)
+      workspaces:
+      - name: git-source
