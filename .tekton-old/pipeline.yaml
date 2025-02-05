@@ -5,10 +5,18 @@ metadata:
 spec:
   params:
     - name: bananinha
+  workspaces:
+    - name: shared-data
+      description: |
+        This workspace contains the cloned repo files, so they can be read by the
+        next task.
   tasks:
     - name: regression-tests
       taskRef:
         name: cypress-task
+      workspaces:
+        - name: output
+          workspace: shared-data
       params:
-      - name: bananinha
-        value: $(params.bananinha)
+        - name: bananinha
+          value: $(params.bananinha)

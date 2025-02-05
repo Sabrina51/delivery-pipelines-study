@@ -14,7 +14,7 @@ spec:
         pipelineRef:
           name: simple-pipeline
       workspaces:
-        - name: shared-data
+        - name: output
           volumeClaimTemplate:
             spec:
               accessModes:
