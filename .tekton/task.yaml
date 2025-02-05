@@ -18,24 +18,3 @@ spec:
 
           echo "AAAAA"
           ls -la /workspace
-
----
-
-apiVersion: tekton.dev/v1beta1
-kind: TaskRun
-metadata:
-  generateName: git-clone-
-  labels:
-    tekton.dev/task: git-clone
-spec:
-  taskRef:
-    name: cypress-task
-  params:
-    - name: url
-      value: https://github.com/redhat-scholars/tekton-tutorial-greeter
-    - name: revision
-      value: master
-  workspaces:
-    - name: output
-      persistentVolumeClaim:
-        claimName: tekton-tutorial-sources
