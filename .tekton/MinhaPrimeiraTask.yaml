@@ -3,16 +3,6 @@ kind: Task
 metadata:
   name: minha-primeira-task
 spec:
-  inputs:
-    resources:
-      - name: workspace
-        type: git
-    params:
-      - name: bananinha
-  outputs:
-    resources:
-      - name: builtImage
-        type: image
   steps:
     - name: build-sources
       image: ubuntu
