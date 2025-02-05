@@ -4,17 +4,10 @@ metadata:
   name: cypress-task
 spec:
   workspaces:
-    - name: output
-      description: The git repo will be cloned onto the volume backing this workspace
+    - name: workspace
   steps:
     - name: install-cypress
       image: ubuntu
-      command:
-        ["/bin/bash", "-c"]
-        # - /bin/bash
-        # args: ["-c", "echo hello world" ]
-      args:
-        - |
-
-          echo "AAAAA"
-          # ls -la /workspace
+      script: |
+        #!/bin/bash
+        ls -la $(workspaces.workspace.path)
