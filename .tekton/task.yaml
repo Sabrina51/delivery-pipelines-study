@@ -8,10 +8,10 @@ spec:
       image: ubuntu
       script: |
         #!/bin/sh
-        echo "BANANA" > $(workspaces.sabrina.path)/cypress
+        echo "BANANA" > $(workspaces.git-source.path)/cypress
         ls
       workspaces:
-        - name: sabrina
+        - name: git-source
           mountPath: /custom/path/relative/to/root
     - name: install-cypress
       image: ubuntu
