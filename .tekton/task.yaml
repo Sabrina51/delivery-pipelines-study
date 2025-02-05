@@ -15,7 +15,7 @@ spec:
         # args: ["-c", "echo hello world" ]
       args:
         - |
-          ls
+          ls -la /workspace
 
 ---
 
