@@ -17,6 +17,3 @@ spec:
       params:
       - name: bananinha
         value: $(params.bananinha)
-      workspaces:
-      - name: sabrina
-        emptyDir: {}
