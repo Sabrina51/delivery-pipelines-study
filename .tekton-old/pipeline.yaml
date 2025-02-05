@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: simple-pipeline
+spec:
+  params:
+    - name: bananinha
+  tasks:
+    - name: regression-tests
+      taskRef:
+        name: cypress-task
+      params:
+      - name: bananinha
+        value: $(params.bananinha)

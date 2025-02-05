@@ -1,0 +1,18 @@
+apiVersion: triggers.tekton.dev/v1beta1
+kind: TriggerTemplate
+metadata:
+  name: trigger-template
+spec:
+  params:
+  - name: bananinha
+  resourcetemplates:
+  - apiVersion: tekton.dev/v1beta1
+    kind: PipelineRun
+    metadata:
+      generateName: pipeline-run-
+    spec:
+      pipelineRef:
+        name: simple-pipeline
+      params:
+      - name: bananinha
+        value: $(params.bananinha)

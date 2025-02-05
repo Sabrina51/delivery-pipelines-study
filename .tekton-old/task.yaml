@@ -1,0 +1,15 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Task
+metadata:
+  name: cypress-task
+spec:
+  steps:
+    - name: install-cypress
+      image: ubuntu
+      command:
+        ["/bin/bash", "-c"]
+        # - /bin/bash
+        # args: ["-c", "echo hello world" ]
+      args:
+        - |
+          ls
