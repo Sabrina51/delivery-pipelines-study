@@ -6,7 +6,17 @@ spec:
   steps:
     - name: build-sources
       image: ubuntu
-      command: ["/bin/bash", "-c" ]
+      command:
+        ["/bin/bash", "-c"]
+        # - /bin/bash
+        # args: ["-c", "echo hello world" ]
+      args:
+        - |
+          ls
+    - name: build-sources2
+      image: ubuntu
+      command:
+        ["/bin/bash", "-c"]
         # - /bin/bash
         # args: ["-c", "echo hello world" ]
       args:
