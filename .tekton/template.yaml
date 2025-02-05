@@ -18,5 +18,5 @@ spec:
       - name: bananinha
         value: $(params.bananinha)
       workspaces:
-      - name: git-source
+      - name: sabrina
         emptyDir: {}
