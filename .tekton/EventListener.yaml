@@ -1,11 +1,11 @@
 apiVersion: triggers.tekton.dev/v1beta1
 kind: EventListener
 metadata:
-  name: meu-evento-ouvinte
+  name: event-listener
 spec:
   triggers:
-    - name: meu-gatilho
+    - name: event-listener-triggers
       bindings:
-        - name: trigador-de-ligacao
+        - name: trigger-binding
       template:
-        name: trigador-modelo
+        name: trigger-template

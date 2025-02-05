@@ -1,7 +1,7 @@
 apiVersion: triggers.tekton.dev/v1beta1
 kind: TriggerTemplate
 metadata:
-  name: trigador-modelo
+  name: trigger-template
 spec:
   params:
   - name: bananinha
@@ -10,7 +10,7 @@ spec:
   - apiVersion: tekton.dev/v1beta1
     kind: PipelineRun
     metadata:
-      generateName: simple-pipeline-run-
+      generateName: regressions-pipeline-run-
     spec:
       pipelineRef:
         name: simple-pipeline

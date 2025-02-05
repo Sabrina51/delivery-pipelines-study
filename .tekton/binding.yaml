@@ -1,7 +1,7 @@
 apiVersion: triggers.tekton.dev/v1beta1
 kind: TriggerBinding
 metadata:
-  name: trigador-de-ligacao
+  name: trigger-binding
 spec:
   params:
     - name: bananinha

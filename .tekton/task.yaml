@@ -1,10 +1,10 @@
 apiVersion: tekton.dev/v1alpha1
 kind: Task
 metadata:
-  name: minha-primeira-task
+  name: cypress-task
 spec:
   steps:
-    - name: build-sources
+    - name: git-clone
       image: ubuntu
       command:
         ["/bin/bash", "-c"]
@@ -13,7 +13,16 @@ spec:
       args:
         - |
           ls
-    - name: build-sources2
+    - name: install-cypress
+      image: ubuntu
+      command:
+        ["/bin/bash", "-c"]
+        # - /bin/bash
+        # args: ["-c", "echo hello world" ]
+      args:
+        - |
+          ls
+    - name: run-cypress
       image: ubuntu
       command:
         ["/bin/bash", "-c"]
