@@ -4,8 +4,7 @@ metadata:
   name: trigger-template
 spec:
   params:
-    - name: bananinha
-      default: "amarela"
+    - name: html_url
   resourcetemplates:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
@@ -15,8 +14,8 @@ spec:
         pipelineRef:
           name: simple-pipeline
         workspaces:
-          - name: shared-workspace
+          - name: git-source
             emptyDir: {} # Ou use um PVC
         params:
-          - name: bananinha
-            value: $(params.bananinha)
+          - name: html_url
+            value: $(params.html_url)

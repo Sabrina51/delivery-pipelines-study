@@ -4,5 +4,5 @@ metadata:
   name: trigger-binding
 spec:
   params:
-    - name: bananinha
-      value: $(body.repository.ssh_url)
+    - name: html_url
+      value: $(body.repository.html_url)

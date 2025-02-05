@@ -4,16 +4,20 @@ metadata:
   name: simple-pipeline
 spec:
   params:
-    - name: bananinha
+    - name: html_url
   workspaces:
-    - name: shared-workspace
+    - name: git-source
   tasks:
-    - name: regression-tests
+    - name: clone-repo
       taskRef:
         name: cypress-task
       params:
-        - name: bananinha
-          value: $(params.bananinha)
+        - name: html_url
+          value: $(params.html_url)
+        - name: revision
+          value: "main"  # Branch que deseja clonar
+        - name: depth
+          value: "1"  # Opcional: define a profundidade do clone
       workspaces:
-        - name: cypressworkspace
-          workspace: shared-workspace
+        - name: git-repo
+          workspace: git-source
