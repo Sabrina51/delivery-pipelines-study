@@ -4,15 +4,27 @@ metadata:
   name: trigger-template
 spec:
   params:
-  - name: bananinha
+    - name: bananinha
   resourcetemplates:
-  - apiVersion: tekton.dev/v1beta1
-    kind: PipelineRun
-    metadata:
-      generateName: pipeline-run-
-    spec:
-      pipelineRef:
-        name: simple-pipeline
+    - apiVersion: tekton.dev/v1beta1
+      kind: PipelineRun
+      metadata:
+        generateName: pipeline-run-
+      spec:
+        pipelineRef:
+          name: simple-pipeline
+        podTemplate:
+          securityContext:
+            fsGroup: 65532
+      workspaces:
+        - name: shared-data
+          volumeClaimTemplate:
+            spec:
+              accessModes:
+                - ReadWriteOnce
+              resources:
+                requests:
+                  storage: 1Gi
       params:
-      - name: bananinha
-        value: $(params.bananinha)
+        - name: bananinha
+          value: $(params.bananinha)

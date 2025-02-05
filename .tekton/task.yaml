@@ -3,6 +3,7 @@ kind: Task
 metadata:
   name: cypress-task
 spec:
+  description: Read and display README file.
   steps:
     - name: git-clone
       image: ubuntu
@@ -10,9 +11,6 @@ spec:
         #!/bin/sh
         echo "BANANA" > $(workspaces.sabrina.path)/cypress
         ls
-      workspaces:
-        - name: sabrina
-          mountPath: /custom/path/relative/to/root
     # - name: install-cypress
     #   image: ubuntu
     #   command:
@@ -23,20 +21,12 @@ spec:
     #     - |
     #       ls
     # - name: run-cypress
-    #   image: cypress/browsers:22.12.0
+    #   image: ubuntu
     #   command:
-    #     - "cypress"
+    #     ["/bin/bash", "-c"]
+    #     # - /bin/bash
+    #     # args: ["-c", "echo hello world" ]
     #   args:
-    #     - "run"
-
----
-
-apiVersion: tekton.dev/v1beta1
-kind: TaskRun
-metadata:
-  name: run-cypress-tests2
-spec:
-  taskRef:
-    name: cypress-task
-  workspaces:
-    - name: sabrina
+    #     - |
+    #       cd workspace/
+    #       ls
