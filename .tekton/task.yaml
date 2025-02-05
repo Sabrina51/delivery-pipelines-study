@@ -30,4 +30,5 @@ spec:
         # args: ["-c", "echo hello world" ]
       args:
         - |
+          cd workspace/
           ls
