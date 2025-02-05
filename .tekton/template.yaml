@@ -5,6 +5,7 @@ metadata:
 spec:
   params:
     - name: bananinha
+      default: "amarela"
   resourcetemplates:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
