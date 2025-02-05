@@ -1,15 +1,15 @@
 apiVersion: tekton.dev/v1alpha1
 kind: Task
 metadata:
-  name: clone-repo
+  name: git-repo
 spec:
   workspaces:
-    - name: git-repo
+    - name: output
   steps:
     - name: install-cypress
       image: ubuntu
       script: |
         #!/bin/bash
         ls
-        ls -la $(git-repo.workspace.path)
+        ls -la $(output.workspace.path)
         ls -la /workspace/output

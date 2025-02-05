@@ -10,7 +10,7 @@ spec:
   tasks:
     - name: clone-repo
       taskRef:
-        name: cypress-task
+        name: git-repo
       params:
         - name: html_url
           value: $(params.html_url)
@@ -19,5 +19,5 @@ spec:
         - name: depth
           value: "1"  # Opcional: define a profundidade do clone
       workspaces:
-        - name: git-repo
+        - name: output
           workspace: git-source
