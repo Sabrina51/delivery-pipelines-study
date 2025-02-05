@@ -15,5 +15,5 @@ spec:
         - name: bananinha
           value: $(params.bananinha)
       workspaces:
-        - name: workspace
+        - name: cypressworkspace
           workspace: shared-workspace

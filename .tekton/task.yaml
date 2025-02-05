@@ -4,15 +4,11 @@ metadata:
   name: cypress-task
 spec:
   workspaces:
-    - name: workspace
+    - name: cypressworkspace
   steps:
     - name: install-cypress
       image: ubuntu
       script: |
         #!/bin/bash
         ls
-        ls -la $(workspaces.workspace.path)
-        ls -la $(workspaces.root.path)
-        ls -la $(workspaces.home.path)
-        ls -la $(workspaces.tekton.path)
-        ls -la $(workspaces.usr.path)
+        ls -la $(cypressworkspace.workspace.path)
