@@ -16,3 +16,6 @@ spec:
       workspaces:
         - name: shared-workspace
           emptyDir: {} # Ou use um PVC
+      params:
+        - name: bananinha
+          value: $(params.bananinha)
