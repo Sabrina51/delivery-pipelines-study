@@ -14,9 +14,9 @@ spec:
       spec:
         pipelineRef:
           name: simple-pipeline
-      workspaces:
-        - name: shared-workspace
-          emptyDir: {} # Ou use um PVC
-      params:
-        - name: bananinha
-          value: $(params.bananinha)
+        workspaces:
+          - name: shared-workspace
+            emptyDir: {} # Ou use um PVC
+        params:
+          - name: bananinha
+            value: $(params.bananinha)
