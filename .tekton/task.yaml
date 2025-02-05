@@ -13,6 +13,15 @@ spec:
       args:
         - |
           ls
+    - name: fetch-source
+      image: ubuntu
+      command:
+        ["/bin/bash", "-c"]
+        # - /bin/bash
+        # args: ["-c", "echo hello world" ]
+      args:
+        - |
+          ls
     - name: install-cypress
       image: ubuntu
       command:
