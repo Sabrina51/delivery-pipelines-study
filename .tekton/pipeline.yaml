@@ -7,6 +7,7 @@ spec:
     - name: bananinha
   workspaces:
     - name: shared-workspace
+    - name: git-source
   tasks:
     - name: regression-tests
       taskRef:
@@ -17,3 +18,5 @@ spec:
       workspaces:
         - name: workspace
           workspace: shared-workspace
+        - name: output
+          workspace: git-source
