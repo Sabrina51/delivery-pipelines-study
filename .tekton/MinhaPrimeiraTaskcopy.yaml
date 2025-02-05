@@ -1,0 +1,24 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Task
+metadata:
+  name: minha-segunda-task
+spec:
+  steps:
+    - name: build-sources
+      image: ubuntu
+      command:
+        ["/bin/bash", "-c"]
+        # - /bin/bash
+        # args: ["-c", "echo hello world" ]
+      args:
+        - |
+          ls
+    - name: build-sources2
+      image: ubuntu
+      command:
+        ["/bin/bash", "-c"]
+        # - /bin/bash
+        # args: ["-c", "echo hello world" ]
+      args:
+        - |
+          ls

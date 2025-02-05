@@ -12,3 +12,9 @@ spec:
       params:
       - name: bananinha
         value: $(params.bananinha)
+    - name: duas-taks
+      taskRef:
+        name: minha-segunda-task
+      params:
+      - name: bananinha
+        value: $(params.bananinha)
