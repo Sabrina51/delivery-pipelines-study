@@ -3,6 +3,8 @@ kind: Pipeline
 metadata:
   name: simple-pipeline
 spec:
+  workspaces:
+    - name: sabrina
   params:
     - name: bananinha
   tasks:
