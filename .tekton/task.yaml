@@ -17,4 +17,4 @@ spec:
         - |
 
           echo "AAAAA"
-          ls -la /workspace
+          # ls -la /workspace
