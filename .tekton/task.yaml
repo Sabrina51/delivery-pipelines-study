@@ -30,11 +30,14 @@ spec:
         printf "\n====================== apt-get install ======================\n"
         apt-get install libgtk2.0-0t64 libgtk-3-0t64 libgbm-dev libnotify-dev libnss3 libxss1 libasound2t64 libxtst6 xauth xvfb -y
         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-        nvm install
+        
+        apt install nodejs
+
+        apt install npm
 
         # Verify the Node.js version:
         node -v # Should print "v22.13.1".
-        
+
         # Verify npm version:
         npm -v # Should print "10.9.2".
         npm ci
