@@ -11,5 +11,5 @@ spec:
       script: |
         #!/bin/bash
         ls
-        ls -la $(output.workspace.path)
+        ls -la $(workspaces.output.path)
         ls -la /workspace/output
