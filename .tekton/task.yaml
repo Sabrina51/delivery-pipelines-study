@@ -20,8 +20,8 @@ spec:
       script: |
         #!/bin/sh
         printf "\n====================== git clone ======================\n"
-        echo $(url)
-        echo $(revision)
+        echo $url
+        echo $revision
         git clone https://Sabrina51:$(params.token)@github.com/Sabrina51/delivery-pipelines-study.git $(workspaces.output.path)
     - name: run-cypress
       image: cypress/browsers:latest
