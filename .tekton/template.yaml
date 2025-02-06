@@ -11,6 +11,7 @@ spec:
       metadata:
         generateName: pipeline-run-
       spec:
+        serviceAccountName: git-service-account # Usa as credenciais configuradas
         pipelineRef:
           name: simple-pipeline
         workspaces:
