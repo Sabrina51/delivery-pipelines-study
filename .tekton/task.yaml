@@ -28,4 +28,5 @@ spec:
         ls -la
         printf "\n====================== install cypress ======================\n"
         npm ci
+        printf "\n====================== run cypressn ======================\n"
         npm run cy:run
