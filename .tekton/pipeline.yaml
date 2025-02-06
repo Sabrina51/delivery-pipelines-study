@@ -13,6 +13,7 @@ spec:
       taskRef:
         name: git-clone
       params:
+        # VAO APARECER NA PIPELINE
         - name: url
           value: $(params.clone_url)
         - name: token

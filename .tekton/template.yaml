@@ -3,9 +3,6 @@ kind: TriggerTemplate
 metadata:
   name: trigger-template
 spec:
-  params:
-    - name: clone_url
-    - name: git_token
   resourcetemplates:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
