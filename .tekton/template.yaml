@@ -5,6 +5,7 @@ metadata:
 spec:
   params:
     - name: clone_url
+    - name: git_token
   resourcetemplates:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
@@ -20,4 +21,4 @@ spec:
           - name: clone_url
             value: $(params.clone_url)
           - name: git_token
-            value: $(params.clone_url)
+            value: $(params.git_token)

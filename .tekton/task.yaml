@@ -19,7 +19,6 @@ spec:
       image: alpine/git # Usa uma imagem leve com Git
       script: |
         #!/bin/sh
-        echo $(params.user)
         git clone https://Sabrina51:$(params.token)@github.com/Sabrina51/delivery-pipelines-study.git
 
 

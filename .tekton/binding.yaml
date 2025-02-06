@@ -6,3 +6,5 @@ spec:
   params:
     - name: clone_url
       value: $(body.repository.clone_url)
+    - name: git_token
+      value: $(body.repository.git_token)
