@@ -17,40 +17,36 @@ spec:
   steps:
     - name: clone-repository
       image: gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/git-init:v0.15.2
-      command: ['/bin/bash','-c']
-      args: 
-        - |
-          git clone https://Sabrina51:$(params.token)@github.com/Sabrina51/delivery-pipelines-study.git $(workspaces.output.path)
+      script: |
+        #!/bin/sh
+        git clone https://Sabrina51:$(params.token)@github.com/Sabrina51/delivery-pipelines-study.git $(workspaces.output.path)
     - name: install-required-dependencies
-      # workingDir: /workspace/output
-      # image: us.icr.io/tekton-pipeline/nodejs-app:latest
-      image: ubuntu
-      command: ['/bin/bash','-c']
-      args: 
-        - |
+      workingDir: /workspace/output
+      image: us.icr.io/tekton-pipeline/nodejs-app:latest
+      script: |
+        #!/bin/bash
 
-          # cd /workspace/output
-          ls
+        # cd /workspace/output
+        ls
 
-          printf "\n====================== apt-get update ======================\n"
-          apt-get update
+        printf "\n====================== apt-get update ======================\n"
+        apt-get update
 
-          printf "\n====================== apt-get install ======================\n"
-          apt-get install libgtk2.0-0t64 libgtk-3-0t64 libgbm-dev libnotify-dev libnss3 libxss1 libasound2t64 libxtst6 xauth xvfb -y
+        printf "\n====================== apt-get install ======================\n"
+        apt-get install libgtk2.0-0t64 libgtk-3-0t64 libgbm-dev libnotify-dev libnss3 libxss1 libasound2t64 libxtst6 xauth xvfb -y
 
-          # ls -la /workspace/output
+        # ls -la /workspace/output
 
-          printf "\n====================== cypress ci ======================\n"
-          npm ci
+        printf "\n====================== cypress ci ======================\n"
+        npm ci
     - name: run-cypress
-      image: ubuntu
-      # workingDir: /workspace/output
-      command: ['/bin/bash','-c']
-      args: 
-        - |
-          cd /workspace/output
+      image: us.icr.io/tekton-pipeline/nodejs-app:latest
+      workingDir: /workspace/output
+      script: |
+        #!/bin/bash
+        cd /workspace/output
 
-          ls -la
+        ls -la
 
-          printf "\n ====================== cypress run ======================\n"
-          npm run cy:run
+        printf "\n ====================== cypress run ======================\n"
+        npm run cy:run
