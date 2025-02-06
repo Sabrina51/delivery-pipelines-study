@@ -41,9 +41,6 @@ spec:
         # cd /workspace/output
 
         # ls -la
-
-        printf "\n ====================== cypress run ======================\n"
-        npm run cy:run
     - name: run-cypress
       image: ubuntu
       workingDir: /workspace/output
