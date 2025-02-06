@@ -16,8 +16,6 @@ spec:
           value: $(params.clone_url)
         - name: revision
           value: "main" # Branch que deseja clonar
-        - name: depth
-          value: "1" # Opcional: define a profundidade do clone
       workspaces:
         - name: output
           workspace: git-source

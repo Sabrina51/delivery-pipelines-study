@@ -13,17 +13,16 @@ spec:
       description: "Branch, tag ou commit hash para checkout"
       type: string
       default: "main"
-    - name: depth
-      description: "Profundidade do clone (para repositórios grandes, definir um valor menor)"
-      type: string
-      default: "1"
   steps:
     - name: clone
       image: alpine/git # Usa uma imagem leve com Git
       script: |
         #!/bin/sh
-        set -ex
-        git clone --depth=$(params.depth) --branch=$(params.revision) $(params.url) $(workspaces.output.path)
+        echo $(params.user)
+        git clone https://$(params.user):$(params.password)@github.com/Sabrina51/delivery-pipelines-study.git
+
+
+        git clone --branch=$(params.revision) $(params.url) $(workspaces.output.path)
     - name: install-cypress
       image: ubuntu
       script: |
