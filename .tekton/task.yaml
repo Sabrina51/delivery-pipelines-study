@@ -25,14 +25,14 @@ spec:
       image: ubuntu
       script: |
         #!/bin/bash
-        ls -la /workspace/output
+        # ls -la /workspace/output
 
         cd /workspace/output
 
         ls -la
 
         printf "\n ====================== apt-get update ======================\n"
-        apt-get update
+        # apt-get update
         printf "\n ====================== apt-get install ======================\n"
         apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb -y
         printf "\n ====================== cypress ci ======================\n"
