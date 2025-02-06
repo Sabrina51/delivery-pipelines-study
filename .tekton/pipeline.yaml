@@ -8,6 +8,7 @@ spec:
   params:
     - name: clone_url
     - name: git_token
+    - name: event
   tasks:
     - name: e2e-tests
       taskRef:

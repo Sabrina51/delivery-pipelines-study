@@ -19,3 +19,5 @@ spec:
             value: $(params.clone_url)
           - name: git_token
             value: $(params.git_token)
+          - name: event
+            value: $(params.event)
