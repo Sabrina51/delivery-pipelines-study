@@ -7,12 +7,6 @@ spec:
     - name: output
   params:
     - name: url
-      description: "URL do repositório Git"
-      type: string
-    - name: revision
-      description: "Branch, tag ou commit hash para checkout"
-      type: string
-      default: "main"
     - name: token
   steps:
     - name: clone-repository
@@ -21,8 +15,8 @@ spec:
         #!/bin/sh
         printf "\n====================== git clone ======================\n"
         echo "variaveis\n"
+        echo $token
         echo $url
-        echo $revision
         echo "fim\n"
         git clone https://Sabrina51:$(params.token)@github.com/Sabrina51/delivery-pipelines-study.git $(workspaces.output.path)
     - name: run-cypress
