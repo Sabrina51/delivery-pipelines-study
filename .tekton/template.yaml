@@ -14,10 +14,10 @@ spec:
         workspaces:
           - name: git-source
             emptyDir: {} # Ou use um PVC
-        params:
-          - name: clone_url
-            value: $(params.clone_url)
-          - name: git_token
-            value: $(params.git_token)
-          - name: event
-            value: $(params.event)
+        # params:
+        #   - name: clone_url
+        #     value: $(params.clone_url)
+        #   - name: git_token
+        #     value: $(params.git_token)
+        #   - name: event
+        #     value: $(params.event)
