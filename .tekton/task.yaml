@@ -13,13 +13,14 @@ spec:
       description: "Branch, tag ou commit hash para checkout"
       type: string
       default: "main"
+    - name: token
   steps:
     - name: clone
       image: alpine/git # Usa uma imagem leve com Git
       script: |
         #!/bin/sh
         echo $(params.user)
-        git clone https://$(params.user):$(params.password)@github.com/Sabrina51/delivery-pipelines-study.git
+        git clone https://Sabrina51:$(params.token)@github.com/Sabrina51/delivery-pipelines-study.git
 
 
         git clone --branch=$(params.revision) $(params.url) $(workspaces.output.path)
