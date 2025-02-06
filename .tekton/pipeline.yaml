@@ -4,7 +4,7 @@ metadata:
   name: simple-pipeline
 spec:
   params:
-    - name: html_url
+    - name: clone_url
   workspaces:
     - name: git-source
   tasks:
@@ -12,8 +12,8 @@ spec:
       taskRef:
         name: git-repo
       params:
-        - name: html_url
-          value: $(params.html_url)
+        - name: clone_url
+          value: $(params.clone_url)
         - name: revision
           value: "main"  # Branch que deseja clonar
         - name: depth

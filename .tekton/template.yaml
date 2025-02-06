@@ -4,7 +4,7 @@ metadata:
   name: trigger-template
 spec:
   params:
-    - name: html_url
+    - name: clone_url
   resourcetemplates:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
@@ -17,5 +17,5 @@ spec:
           - name: git-source
             emptyDir: {} # Ou use um PVC
         params:
-          - name: html_url
-            value: $(params.html_url)
+          - name: clone_url
+            value: $(params.clone_url)
