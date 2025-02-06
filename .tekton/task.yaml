@@ -5,7 +5,25 @@ metadata:
 spec:
   workspaces:
     - name: output
+  params:
+    - name: url
+      description: "URL do repositório Git"
+      type: string
+    - name: revision
+      description: "Branch, tag ou commit hash para checkout"
+      type: string
+      default: "main"
+    - name: depth
+      description: "Profundidade do clone (para repositórios grandes, definir um valor menor)"
+      type: string
+      default: "1"
   steps:
+    - name: clone
+      image: alpine/git # Usa uma imagem leve com Git
+      script: |
+        #!/bin/sh
+        set -ex
+        git clone --depth=$(params.depth) --branch=$(params.revision) $(params.url) $(workspaces.output.path)
     - name: install-cypress
       image: ubuntu
       script: |
@@ -13,4 +31,3 @@ spec:
         ls
         # ls -la $(workspaces.output.path)
         ls -la /workspace/output
-    
