@@ -4,9 +4,7 @@ metadata:
   name: trigger-binding
 spec:
   params:
-    # - name: clone_url
-    #   value: $(body.repository.clone_url)
+    - name: clone_url
+      value: $(body.repository.clone_url)
     # - name: git_token
     #   value: $(body.repository.git_token)
-    - name: bananinha
-      value: $(body.repository.git_token)
