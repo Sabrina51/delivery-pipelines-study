@@ -9,7 +9,7 @@ spec:
     - name: clone_url
     - name: git_token
   tasks:
-    - name: clone-git-repo
+    - name: e2e-tests
       taskRef:
         name: git-clone
       params:
