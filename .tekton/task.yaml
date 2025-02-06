@@ -37,11 +37,12 @@ spec:
         ls -la
         printf "\n====================== cypress ci ======================\n"
         npm ci
-    - name: run-cypress
-      image: node
-      workingDir: /workspace/output
-      script: |
-        #!/bin/bash
-        ls -la
-        printf "\n ====================== cypress run ======================\n"
         npm run cy:run
+    # - name: run-cypress
+    #   image: node
+    #   workingDir: /workspace/output
+    #   script: |
+    #     #!/bin/bash
+    #     ls -la
+    #     printf "\n ====================== cypress run ======================\n"
+    #     npm run cy:run
