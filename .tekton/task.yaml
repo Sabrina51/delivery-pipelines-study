@@ -21,7 +21,7 @@ spec:
         #!/bin/sh
         git clone https://Sabrina51:$(params.token)@github.com/Sabrina51/delivery-pipelines-study.git $(workspaces.output.path)
     - name: install-required-dependencies
-      image: ubuntu
+      image: node:22-alpine
       script: |
         #!/bin/bash
         printf "\n====================== apt-get update ======================\n"
@@ -29,6 +29,8 @@ spec:
 
         printf "\n====================== apt-get install ======================\n"
         apt-get install libgtk2.0-0t64 libgtk-3-0t64 libgbm-dev libnotify-dev libnss3 libxss1 libasound2t64 libxtst6 xauth xvfb -y
+
+        npm ci
     - name: install-cypress
       image: node:22-alpine
       workingDir: /workspace/output
