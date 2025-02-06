@@ -5,4 +5,4 @@ metadata:
 spec:
   params:
     - name: clone_url
-      value: $(body.repository.ssh_url)
+      value: $(body.repository.clone_url)
