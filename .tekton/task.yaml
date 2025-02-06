@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1alpha1
 kind: Task
 metadata:
-  name: git-repo
+  name: git-clone
 spec:
   workspaces:
     - name: output
@@ -11,5 +11,5 @@ spec:
       script: |
         #!/bin/bash
         ls
-        ls -la $(workspaces.output.path)
+        # ls -la $(workspaces.output.path)
         ls -la /workspace/output

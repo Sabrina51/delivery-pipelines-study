@@ -10,7 +10,7 @@ spec:
   tasks:
     - name: clone-repo
       taskRef:
-        name: git-repo
+        name: git-clone
       params:
         - name: url
           value: $(params.clone_url)
