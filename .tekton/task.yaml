@@ -15,16 +15,16 @@ spec:
         #!/bin/sh
         printf "\n====================== git clone ======================\n"
         echo "variaveis\n"
-        echo $token
+        echo "$token"
         echo $url
         echo "fim\n"
-        git clone https://Sabrina51:$(params.token)@github.com/Sabrina51/delivery-pipelines-study.git $(workspaces.output.path)
-    - name: run-cypress
-      image: cypress/browsers:latest
-      workingDir: /workspace/output
-      script: |
-        #!/bin/bash
-        printf "\n====================== install cypress ======================\n"
-        npm ci
-        printf "\n====================== run cypressn ======================\n"
-        npm run cy:run
+        # git clone https://Sabrina51:$(params.token)@github.com/Sabrina51/delivery-pipelines-study.git $(workspaces.output.path)
+    # - name: run-cypress
+    #   image: cypress/browsers:latest
+    #   workingDir: /workspace/output
+    #   script: |
+    #     #!/bin/bash
+    #     printf "\n====================== install cypress ======================\n"
+    #     npm ci
+    #     printf "\n====================== run cypressn ======================\n"
+    #     npm run cy:run
