@@ -35,13 +35,13 @@ spec:
       script: |
         #!/bin/bash
         ls -la
-        printf "\n====================== cypress ci ======================\n"
-        npm ci
+        printf "\n====================== install cypress ======================\n"
+        npm install cypress --save-dev
     - name: run-cypress
       image: cypress/base:22.12.0
       workingDir: /workspace/output
       script: |
         #!/bin/bash
         ls -la
-        printf "\n ====================== cypress run ======================\n"
-        npm run cy:run
+        printf "\n ====================== npx cypress run ======================\n"
+        npx cypress run
