@@ -21,13 +21,12 @@ spec:
         #!/bin/sh
         git clone https://Sabrina51:$(params.token)@github.com/Sabrina51/delivery-pipelines-study.git $(workspaces.output.path)
     - name: install-required-dependencies
-      workingDir: /workspace/output
       image: ubuntu
       script: |
         #!/bin/bash
 
         # cd /workspace/output
-        ls
+        # ls
 
         printf "\n====================== apt-get update ======================\n"
         apt-get update
@@ -38,6 +37,7 @@ spec:
         # ls -la /workspace/output
 
         printf "\n====================== cypress ci ======================\n"
+        ls
         npm ci
     - name: run-cypress
       image: ubuntu
