@@ -13,3 +13,4 @@ spec:
         ls
         # ls -la $(workspaces.output.path)
         ls -la /workspace/output
+    

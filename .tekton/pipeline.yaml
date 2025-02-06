@@ -8,16 +8,31 @@ spec:
   params:
     - name: clone_url
   tasks:
-    - name: clone-repo
+    - name: clone-git-repo
       taskRef:
         name: git-clone
       params:
         - name: url
           value: $(params.clone_url)
         - name: revision
-          value: "main"  # Branch que deseja clonar
+          value: "main" # Branch que deseja clonar
         - name: depth
-          value: "1"  # Opcional: define a profundidade do clone
+          value: "1" # Opcional: define a profundidade do clone
       workspaces:
         - name: output
           workspace: git-source
+    - name: listar-arquivos
+      runAfter: ["clone-git-repo"] # Garante que essa task rode depois do clone
+      taskSpec:
+        workspaces:
+          - name: source-code # Define um workspace interno para essa task
+        steps:
+          - name: listar
+            image: ubuntu
+            script: |
+              #!/bin/bash
+              echo "Arquivos clonados:"
+              ls -la $(workspaces.source-code.path)
+      workspaces:
+        - name: source-code
+          workspace: git-source # Usa o mesmo workspace onde o repositório foi clonado
