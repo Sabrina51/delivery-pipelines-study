@@ -22,7 +22,7 @@ spec:
         git clone https://Sabrina51:$(params.token)@github.com/Sabrina51/delivery-pipelines-study.git $(workspaces.output.path)
     - name: install-required-dependencies
       image: ubuntu
-      workingDir: /workspace/output
+      # workingDir: /workspace/output
       script: |
         #!/bin/bash
         printf "\n====================== apt-get update ======================\n"
@@ -34,23 +34,19 @@ spec:
         # node -v
         printf "\n====================== Verify npm version ======================\n"
         npm -v
+    - name: install-cypress
+      image: ubuntu
+      workingDir: /workspace/output
+      script: |
+        #!/bin/bash
+        ls -la
         printf "\n====================== cypress ci ======================\n"
         npm ci
+    - name: run-cypress
+      image: ubuntu
+      workingDir: /workspace/output
+      script: |
+        #!/bin/bash
+        ls -la
         printf "\n ====================== cypress run ======================\n"
         npm run cy:run
-    # - name: install-cypress
-    #   image: ubuntu
-    #   workingDir: /workspace/output
-    #   script: |
-    #     #!/bin/bash
-    #     ls -la
-    #     printf "\n====================== cypress ci ======================\n"
-    #     npm ci
-    # - name: run-cypress
-    #   image: ubuntu
-    #   workingDir: /workspace/output
-    #   script: |
-    #     #!/bin/bash
-    #     ls -la
-    #     printf "\n ====================== cypress run ======================\n"
-    #     npm run cy:run
