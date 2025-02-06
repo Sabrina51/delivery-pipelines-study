@@ -32,9 +32,9 @@ spec:
 
         # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
-        apt install nodejs
+        apt install nodejs -y
 
-        apt install npm
+        apt install npm -y
 
         # Verify the Node.js version:
         node -v # Should print "v22.13.1".
