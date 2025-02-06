@@ -3,16 +3,16 @@ kind: Pipeline
 metadata:
   name: simple-pipeline
 spec:
-  params:
-    - name: clone_url
   workspaces:
     - name: git-source
+  params:
+    - name: clone_url
   tasks:
     - name: clone-repo
       taskRef:
         name: git-repo
       params:
-        - name: clone_url
+        - name: url
           value: $(params.clone_url)
         - name: revision
           value: "main"  # Branch que deseja clonar
