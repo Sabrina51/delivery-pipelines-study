@@ -20,21 +20,20 @@ spec:
       script: |
         #!/bin/sh
         git clone https://Sabrina51:$(params.token)@github.com/Sabrina51/delivery-pipelines-study.git $(workspaces.output.path)
-        # git clone --branch=$(params.revision) $(params.url) $(workspaces.output.path)
     - name: install-required-dependencies
       image: ubuntu
       script: |
         #!/bin/bash
         # ls -la /workspace/output
 
-        # printf "\n====================== apt-get update ======================\n"
-        # apt-get update
-
-        # printf "\n====================== apt-get install ======================\n"
-        # apt-get install libgtk2.0-0t64 libgtk-3-0t64 libgbm-dev libnotify-dev libnss3 libxss1 libasound2t64 libxtst6 xauth xvfb -y
-
         cd /workspace/output
         ls
+
+        printf "\n====================== apt-get update ======================\n"
+        apt-get update
+
+        printf "\n====================== apt-get install ======================\n"
+        apt-get install libgtk2.0-0t64 libgtk-3-0t64 libgbm-dev libnotify-dev libnss3 libxss1 libasound2t64 libxtst6 xauth xvfb -y
 
         printf "\n====================== cypress ci ======================\n"
         npm ci
