@@ -21,14 +21,16 @@ spec:
         #!/bin/sh
         git clone https://Sabrina51:$(params.token)@github.com/Sabrina51/delivery-pipelines-study.git $(workspaces.output.path)
     - name: install-required-dependencies
-      image: node
+      image: ubuntu
       workingDir: /workspace/output
       script: |
         #!/bin/bash
         printf "\n====================== apt-get update ======================\n"
         apt-get update
         printf "\n====================== apt-get install ======================\n"
-        apt-get install libgtk2.0-0t64 libgtk-3-0t64 libgbm-dev libnotify-dev libnss3 libxss1 libasound2t64 libxtst6 xauth xvfb -y
+        apt-get install libgtk2.0-0t64 libgtk-3-0t64 libgbm-dev libnotify-dev libnss3 libxss1 libasound2t64 libxtst6 xauth xvfb nodejs npm -y
+        printf "\n====================== Verify the Node.js version ======================\n"
+        node -v
         printf "\n====================== Verify npm version ======================\n"
         npm -v
         printf "\n====================== cypress ci ======================\n"
