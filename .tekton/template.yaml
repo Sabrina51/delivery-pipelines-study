@@ -11,7 +11,6 @@ spec:
       metadata:
         generateName: pipeline-run-
       spec:
-        serviceAccountName: git-service-account # Usa as credenciais configuradas
         pipelineRef:
           name: simple-pipeline
         workspaces:
@@ -19,4 +18,6 @@ spec:
             emptyDir: {} # Ou use um PVC
         params:
           - name: clone_url
+            value: $(params.clone_url)
+          - name: git_token
             value: $(params.clone_url)
