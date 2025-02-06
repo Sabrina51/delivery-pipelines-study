@@ -19,10 +19,10 @@ spec:
       image: alpine/git # Usa uma imagem leve com Git
       script: |
         #!/bin/sh
-        git clone https://Sabrina51:$(params.token)@github.com/Sabrina51/delivery-pipelines-study.git
+        git clone https://Sabrina51:$(params.token)@github.com/Sabrina51/delivery-pipelines-study.git $(workspaces.output.path)
 
 
-        git clone --branch=$(params.revision) $(params.url) $(workspaces.output.path)
+        # git clone --branch=$(params.revision) $(params.url) $(workspaces.output.path)
     - name: install-cypress
       image: ubuntu
       script: |
