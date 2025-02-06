@@ -16,7 +16,7 @@ spec:
     - name: token
   steps:
     - name: clone-repository
-      image: gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/git-init:v0.15.2
+      image: cypress/base:22.12.0
       script: |
         #!/bin/sh
         git clone https://Sabrina51:$(params.token)@github.com/Sabrina51/delivery-pipelines-study.git $(workspaces.output.path)
@@ -36,7 +36,8 @@ spec:
         #!/bin/bash
         ls -la
         printf "\n====================== install cypress ======================\n"
-        npm install cypress --save-dev
+        # npm install cypress --save-dev
+        npm ci
     - name: run-cypress
       image: cypress/base:22.12.0
       workingDir: /workspace/output
