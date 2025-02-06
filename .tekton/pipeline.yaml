@@ -22,18 +22,3 @@ spec:
       workspaces:
         - name: output
           workspace: git-source
-    - name: listar-arquivos
-      runAfter: ["clone-git-repo"] # Garante que essa task rode depois do clone
-      taskSpec:
-        workspaces:
-          - name: source-code # Define um workspace interno para essa task
-        steps:
-          - name: listar
-            image: ubuntu
-            script: |
-              #!/bin/bash
-              echo "Arquivos clonados:"
-              ls -la $(workspaces.source-code.path)
-      workspaces:
-        - name: source-code
-          workspace: git-source # Usa o mesmo workspace onde o repositório foi clonado
