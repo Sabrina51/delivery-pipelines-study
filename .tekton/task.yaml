@@ -38,15 +38,13 @@ spec:
         printf "\n====================== cypress ci ======================\n"
         npm ci
 
-        printf "\n====================== cypress verify ======================\n"
-        npx run verify
-    # - name: run-cypress
-    #   image: ubuntu
-    #   script: |
-    #     #!/bin/bash
-    #     cd /workspace/output
+    - name: run-cypress
+      image: ubuntu
+      script: |
+        #!/bin/bash
+        cd /workspace/output
 
-    #     ls -la
+        ls -la
 
-    #     printf "\n ====================== cypress run ======================\n"
-    #     npm run cy:run
+        printf "\n ====================== cypress run ======================\n"
+        npm run cy:run
