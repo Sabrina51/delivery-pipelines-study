@@ -24,7 +24,7 @@ spec:
         #!/bin/sh
         set -ex
         # git clone --depth=$(params.depth) --branch=$(params.revision) $(params.url) $(workspaces.output.path)
-        # git clone $(params.url) $(workspaces.output.path)
+        git clone $(params.url) $(workspaces.output.path)
     - name: install-cypress
       image: ubuntu
       script: |
